@@ -1,0 +1,37 @@
+<div class="content">
+  <table class="content__inner"> 
+    <%= form_for @room do |f| %>
+      <tr>
+        <td><%= f.label :name, "ルーム名", class:"content__form" %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      
+      <tr>
+        <td><%= f.label :introduction, "ルーム紹介文", class:"content__form" %></td>
+        <td><%= f.text_area :introduction %></td>
+      </tr>
+    
+      <tr>
+        <td><%= f.label :price, "料金設定", class:"content__form" %></td>
+        <td><%= f.number_field :price %></td>
+      </tr>
+      
+      <tr>
+        <td><%= f.label :address, "住所", class:"content__form" %></td>
+        <td><%= f.text_area :address %></td>
+      </tr>
+      
+      <tr>
+        <td><%= f.label :image, "ルーム画像", class:"content__form" %></td>
+        <td><%= f.file_field :image %></td>
+      </tr>
+
+      <tr>
+        <td> <%= f.submit "登録する" %></td>
+      </tr>
+
+    <% end %>
+
+  </table>
+
+</div>

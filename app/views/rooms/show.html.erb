@@ -1,0 +1,31 @@
+<div class="content">
+  <table class="content__inner"> 
+    <tr>
+      <th>ルーム画像</th>
+      <td><%= @room.image.url %></td>
+    </tr>
+      
+    <tr>
+      <th>ルーム名</th>
+      <td><%= @room.name %></td>
+    </tr>
+    
+    <tr>
+      <th>ルーム紹介</th>
+      <td><%= @room.introduction %></td>
+    </tr>
+      
+    <tr>
+      <th>料金</th>
+      <td><%= @room.price %></td>
+    </tr>
+
+  </table>
+
+  <div>
+    <ul>
+      <li><%= link_to "登録済：ルーム一覧へ戻る", :rooms %></li>
+    </ul>
+  </div>
+
+</div>
