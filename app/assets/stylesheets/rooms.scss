@@ -1,0 +1,16 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.content {
+  width: 100%;
+  height: 500px;
+  position: relative;
+
+  &__inner {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,-10%);
+  }
+
+}

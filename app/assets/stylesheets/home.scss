@@ -1,0 +1,142 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$cMainColor: black;
+$cWhite: white;
+
+body {
+  margin: 0 auto;
+}
+
+.header {
+  background-color: $cMainColor;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  
+  &__inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    left: 0;
+  }
+
+  &__search {
+    margin-top: 24px;
+  }
+
+  &__nav {
+    margin-top: 24px;
+    position: absolute;
+    right: 0;
+
+    & p {
+      color: $cWhite;
+      margin: 0;
+    }
+  }
+
+  &__login {
+    text-decoration: none;
+    color: $cMainColor;
+  }
+
+  &__new {
+    text-decoration: none;
+    color: $cMainColor;
+  }
+
+}
+
+.top {
+  background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 650px;
+
+  &__content {
+    text-align: center;
+  }
+
+  &__main {
+    padding-top: 100px;
+
+    & p {
+      font-size: 27px;
+      color: $cWhite;
+    }
+  }
+
+  &__form {
+
+    & input:nth-child(1) {
+      width: 250px;
+      height: 30px;
+    }
+
+    & input:nth-child(2) {
+      width: 150px;
+      height: 30px;
+    }
+
+  }
+}
+
+.erea {
+  width: 100%;
+  margin-top: 50px;
+
+  & p {
+    padding-left: 150px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__images {
+    padding-left: 150px;
+    padding-right: 150px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+
+    & span {
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      color: $cWhite;
+      font-weight: 600;
+      font-size: 25px;
+      letter-spacing: 5px;
+      text-align: center;
+      text-shadow: 1px 2px 3px $cMainColor;
+    }
+  }
+
+  & img {
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: $cMainColor;
+  text-align: center;
+  margin-top: 100px;
+
+  & p {
+    padding-top: 70px;
+    color: $cWhite;
+    font-size: 15px;
+    font-family: verdana, arial, helvetica, sans-serif;
+  }
+}
