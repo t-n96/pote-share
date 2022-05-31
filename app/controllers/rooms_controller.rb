@@ -8,9 +8,9 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = params_room
+    @room = Room.new(params_room)
     if @room.save
-      redirect_to :rooms
+      redirect_to rooms_path
     else
       render "new"
     end
@@ -30,6 +30,6 @@ class RoomsController < ApplicationController
   end
 
   def params_room
-    Room.new(params.require(:room).permit(:name,:introduction,:price,:address,:image))
+    params.require(:room).permit(:name,:introduction,:price,:address,:image)
   end
 end
