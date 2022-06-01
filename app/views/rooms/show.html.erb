@@ -2,7 +2,7 @@
   <table class="content__inner"> 
     <tr>
       <th>ルーム画像</th>
-      <td><%= @room.image.url %></td>
+      <td><%= image_tag @room.image_url, class:"content__sized" %></td>
     </tr>
       
     <tr>

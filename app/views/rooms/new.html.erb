@@ -23,7 +23,7 @@
       
       <tr>
         <td><%= f.label :image, "ルーム画像", class:"content__form" %></td>
-        <td><%= f.file_field :image %></td>
+        <td><%= f.file_field :image, accept: 'image/*' %></td>
       </tr>
 
       <tr>

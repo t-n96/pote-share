@@ -17,13 +17,13 @@
   <tbody>
     <% @rooms.each do |room| %>
     <tr>
-      <td><%= room.image.thumb.url %></td>
+      <td><%= image_tag room.image_url, class:"content__sized" %></td>
       <td><%= room.name %></td>
       <td><%= room.introduction %></td>
       <td><%= room.price %></td>
       <td><%= room.created_at %></td>
       <td><%= link_to "確認",room %></td>
-      <td><%= link_to "編集",room %></td>
+      <td><%= link_to "編集",[:edit, room] %></td>
       <td><%= link_to "削除" %></td>
     </tr>
     <% end %>

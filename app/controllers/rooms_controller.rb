@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = params_room
+    @room = Room.new(params_room)
     if @room.save
       redirect_to :rooms
     else
@@ -16,7 +16,12 @@ class RoomsController < ApplicationController
     end
   end
 
+  def params_room
+    params.require(:room).permit(:name, :introduction, :price, :address, :image)
+  end
+
   def edit
+    @room = Room.find(params[:id])
   end
 
   def show
@@ -24,12 +29,16 @@ class RoomsController < ApplicationController
   end
 
   def update
+    @room = Room.find(params[:id])
+    if @room.update(params_room)
+      redirect_to :rooms
+    else
+      render "edit"
+    end
   end
 
   def destroy
   end
 
-  def params_room
-    Room.new(params.require(:room).permit(:name,:introduction,:price,:address,:image))
-  end
+  
 end
