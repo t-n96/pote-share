@@ -20,9 +20,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+    if account_update_params[:avatar].present?
+      resource.avatar.attach(account_update_params[:avatar])    
+    end
+  end
 
   # DELETE /resource
   # def destroy
@@ -63,6 +66,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_sign_in_path_for(resource)
     flash[:notice] = "新規登録完了しました"
     edit_user_registration_path
+  end
+
+  def after_update_path_for(resource)
+    root_path
   end
 
 end

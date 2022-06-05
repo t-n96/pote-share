@@ -26,8 +26,9 @@
       <div>
       <div class="header__nav">
         <% if user_signed_in? %>
-          <p> 現在 <%= current_user.name %> さんがログインしています </p>
-          <button><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+          <p><%= current_user.name %></p>
+          <%= image_tag(current_user.avatar.variant(resize:'50x50'), class:"avatar") %>
+          <button class="header__logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
         <% else %>
           <button><%= link_to "ログイン", new_user_session_path, class: 'header__login' %></button>
           <button><%= link_to "新規登録", new_user_registration_path, class: 'header__new' %></button>
