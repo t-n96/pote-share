@@ -27,8 +27,12 @@
       <div class="header__nav">
         <% if user_signed_in? %>
           <p><%= current_user.name %></p>
-          <%= image_tag(current_user.avatar.variant(resize:'50x50'), class:"avatar") %>
-          <button class="header__logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+          <% if current_user.avatar.attached? %>
+            <%= image_tag(current_user.avatar.variant(resize:'50x50'), class:"avatar") %>
+          <% else %>
+            <%= image_tag 'icon_dummy.jpg', size: '50x50', class:"avatar" %>
+            <button class="header__logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+          <% end %>
         <% else %>
           <button><%= link_to "ログイン", new_user_session_path, class: 'header__login' %></button>
           <button><%= link_to "新規登録", new_user_registration_path, class: 'header__new' %></button>
