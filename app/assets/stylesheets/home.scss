@@ -57,7 +57,35 @@ body {
     color: $cMainColor;
   }
 
+  & ul {
+    list-style: none;
+  }
+
+  & .accordion-title {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  & .accordion-nav {
+    display: none;
+    z-index: 100;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px 25px;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    width: 150px;
+    height: 100px;
+    font-size: 16px;
+    background-color: $cWhite;
+    color: $cMainColor;
+    cursor: pointer;
+  }
+
 }
+
+
 
 .top {
   background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);

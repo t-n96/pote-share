@@ -11,3 +11,16 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+require('jquery')
+
+$(document).on('turbolinks:load', function() {
+
+  $(function(){
+
+    $(".click-title").on("click", function(){
+      $(this).nextAll('.accordion-nav').slideToggle("fast");
+    });
+
+  });
+  
+});
