@@ -16,10 +16,6 @@ class RoomsController < ApplicationController
     end
   end
 
-  def params_room
-    params.require(:room).permit(:name, :introduction, :price, :address, :image)
-  end
-
   def edit
     @room = Room.find(params[:id])
   end
@@ -40,5 +36,9 @@ class RoomsController < ApplicationController
   def destroy
   end
 
+  private
+  def params_room
+    params.require(:room).permit(:name, :introduction, :price, :address, :image).merge(user_id: current_user.id)
+  end
   
 end

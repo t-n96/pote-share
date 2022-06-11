@@ -1,6 +1,7 @@
 <div class="content">
-  <table class="content__inner"> 
-    <%= form_for @room do |f| %>
+  <%= form_for @room do |f| %>
+    <table class="content__inner"> 
+    
       <tr>
         <td><%= f.label :name, "ルーム名", class:"content__form" %></td>
         <td><%= f.text_field :name %></td>
@@ -30,8 +31,8 @@
         <td> <%= f.submit "登録する" %></td>
       </tr>
 
-    <% end %>
-
-  </table>
+    </table>
+      
+  <% end %>
 
 </div>
