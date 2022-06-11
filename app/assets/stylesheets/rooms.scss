@@ -18,4 +18,14 @@
     height: 50%;
   }
 
+  &__show {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+
+    & .show_sized {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
