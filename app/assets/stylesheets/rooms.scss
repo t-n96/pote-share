@@ -22,10 +22,17 @@
     position: absolute;
     top: 10%;
     left: 15%;
+    display: flex;
 
-    & .show_sized {
-      width: 100%;
-      height: 100%;
+    & .info {
+      & .show_sized {
+        width: 100%;
+        height: 80%;
+      }
     }
   }
+
+  
+
 }
+

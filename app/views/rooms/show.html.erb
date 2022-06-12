@@ -1,15 +1,19 @@
 <div class="content">
   <div class="content__show">
-    <%= image_tag @room.image_url, class:"show_sized" %>
-    <p>¥<%= @room.price %>円／日</p>
-
+  
     <div class="info">
+      <%= image_tag @room.image_url, class:"show_sized" %>
       <p>
         <%= @room.user_id %>
         <%= @room.name %><br>
         紹介文：<%= @room.introduction %><br>
         住所：<%= @room.address %>
       </p>
+    </div>
+
+    <div class="reservation">
+      <p>¥<%= @room.price %>円／日</p>
+      <%= render "reservations/new" %>
     </div>
 
   </div>

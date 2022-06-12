@@ -8,4 +8,5 @@ class User < ApplicationRecord
   # validates :profile, length: { maximum: 200 }
   has_one_attached :avatar, dependent: :destroy
   has_many :rooms, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 end
