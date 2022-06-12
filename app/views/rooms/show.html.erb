@@ -1,6 +1,6 @@
 <div class="content">
   <div class="content__show">
-  
+
     <div class="info">
       <%= image_tag @room.image_url, class:"show_sized" %>
       <p>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="reservation">
-      <p>¥<%= @room.price %>円／日</p>
+      <p>¥<%= @room.price %>／日</p>
       <%= render "reservations/new" %>
     </div>
 

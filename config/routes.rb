@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   
   get "/" => "home#top"
   resources :rooms do 
-    resources :reservations
-    post 'reservations/confirm', to: 'reservations#confirm', as: 'confirm'
+    resources :reservations do
+      collection do
+        post :confirm
+      end
+    end
   end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

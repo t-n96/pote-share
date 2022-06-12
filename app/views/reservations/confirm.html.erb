@@ -1,0 +1,35 @@
+<h3>予約確認画面</h3>
+<table>
+  <tr>
+    <td>開始日</td>
+    <td><%= @reservation.start_date %></td>
+  </tr>
+  <tr>
+    <td>終了日</td>
+    <td><%= @reservation.end_date %></td>
+  </tr>
+  <tr>
+    <td>使用日数</td>
+    <td><%= (@reservation.end_date - @reservation.start_date).to_int + 1 %>日</td>
+  </tr>
+  <tr>
+    <td>人数</td>
+    <td><%= @reservation.person %></td>
+  </tr>
+  <tr>
+    <td>合計金額</td>
+    <td><%= (@reservation.price * @reservation.person) * ((@reservation.end_date - @reservation.start_date).to_int + 1) %>円</td>
+  </tr>
+</table>
+
+<%= form_with( model: @reservation, local: true, url: {action: :create}) do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :room_id %>
+  <%= f.hidden_field :price %>
+  <%= f.hidden_field :person %>
+  <%= f.hidden_field :start_date %>
+  <%= f.hidden_field :end_date %>
+  <%= f.submit "予約を確定する" %>
+<% end %>
+
+

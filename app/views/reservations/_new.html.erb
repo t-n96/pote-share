@@ -1,5 +1,5 @@
 <div class="reservation_form">
-  <%= form_with model: @reservation, url: "reservations/confirm", local: true do |f| %>
+  <%= form_with model: @reservation, url: confirm_room_reservations_path(:room_id), method: :post, local: true do |f| %>
     <table>
       <tbody>
         <tr>
@@ -14,8 +14,9 @@
         <tr>
           <td><%= f.date_field :end_date %></td>
         </tr>
-        <%= f.hidden_field :user_id, :value => params[:user_id] %>
-        <%= f.hidden_field :room_id, :value => params[:room_id] %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :room_id, :value => @room.id %>
+        <%= f.hidden_field :price, :value => @room.price %>
         <tr>
           <td><%= f.label :person, "人数" %></td>
         </tr>
