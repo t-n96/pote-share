@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.all.includes(:room)
   end
 
   def new
@@ -14,6 +14,14 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    
+    start_date = @reservation.start_date
+    end_date = @reservation.end_date
+    days = (end_date - start_date).to_i + 1
+    person = @reservation.person
+    price = @reservation.price
+    @reservation.total = (price * person) * days
+
     if @reservation.save
       redirect_to room_reservations_path
     else

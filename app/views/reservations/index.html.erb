@@ -15,8 +15,9 @@
     <% @reservations.each do |reservation| %>
     <tr>
      
-     
-      <td><%= reservation.price %></td>
+      <td><%= image_tag reservation.room.image_url, class:"content__sized" %></td>
+      <td><%= reservation.room.name %></td>
+      <td>¥<%= reservation.total %></td>
       <td><%= reservation.start_date %></td>
       <td><%= reservation.end_date %></td>
     </tr>
