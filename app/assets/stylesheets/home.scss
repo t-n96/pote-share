@@ -24,6 +24,10 @@ body {
 
   &__search {
     margin-top: 24px;
+    display: flex;
+    & .area{
+      margin-right: 10px;
+    }
   }
 
   &__nav {

@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
   end
 
+  def search
+    @rooms = Room.search(params[:keyword])
+  end
+  
+  def area
+    @rooms = Room.search(params[:area])
+  end
+
 end

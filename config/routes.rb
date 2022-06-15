@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   }
   
   get "/" => "home#top"
-  resources :rooms do 
+  resources :rooms do
+    collection do
+      get 'search' => 'rooms#search'
+      get 'area' => 'rooms#area'
+    end
     resources :reservations do
       collection do
         post :confirm
