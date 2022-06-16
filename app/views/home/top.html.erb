@@ -5,8 +5,10 @@
       <div class="top__main" >
         <p>Potepan Shareでまだ体験したことのない旅をしよう</p>
         <div class="top__form">
-          <input type="search" name="search" placeholder="エリア検索：東京">
-          <input type="submit" name="submit" value="探す">
+          <%= form_with url: area_rooms_path, method: :get, local: true do |f| %>
+            <%= f.text_field :area, placeholder: "エリアで探す", class:"area" %>
+            <%= f.submit "検索", class:"btn" %>
+          <% end %>
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@ body {
   &__nav {
     position: absolute;
     display: flex;
-    left: 90%;
+    left: 80%;
 
     & p {
       color: $cWhite;
@@ -44,6 +44,23 @@ body {
     & .avatar {
       border-radius: 50%;
       margin-top: 8px;
+    }
+  }
+
+  & button {
+    margin-top: 15px;
+    width: 120px;
+    height: 40px;
+    background-color: #FFFF00;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+    &:nth-child(1) {
+      margin-right: 10px;
     }
   }
 
@@ -113,14 +130,22 @@ body {
 
   &__form {
 
-    & input:nth-child(1) {
+    & .area {
       width: 250px;
       height: 30px;
     }
 
-    & input:nth-child(2) {
+    & .btn {
       width: 150px;
-      height: 30px;
+      height: 35px;
+      background-color: $cMainColor;
+      color: $cWhite;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
   }
