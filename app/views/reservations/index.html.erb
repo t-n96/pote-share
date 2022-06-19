@@ -1,27 +1,29 @@
+<div class="content">
 <h3>予約ルーム一覧</h3>
+  <div class="index">
+    <table>
+      <thead>
+        <tr>
+          <th>ルーム画像</th>
+          <th>ルーム名</th>
+          <th>合計料金</th>
+          <th>開始日</th>
+          <th>終了日</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>ルーム画像</th>
-      <th>ルーム名</th>
-      <th>合計料金</th>
-      <th>開始日</th>
-      <th>終了日</th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @reservations.each do |reservation| %>
+        <tr align="center">
+          <td><%= image_tag reservation.room.image_url, class:"content__sized" %></td>
+          <td><%= reservation.room.name %></td>
+          <td>¥<%= reservation.total %></td>
+          <td width="15%"><%= reservation.start_date %></td>
+          <td width="15%"><%= reservation.end_date %></td>
+        </tr>
+        <% end %>
+      </table>
 
-  <tbody>
-    <% @reservations.each do |reservation| %>
-    <tr>
-     
-      <td><%= image_tag reservation.room.image_url, class:"content__sized" %></td>
-      <td><%= reservation.room.name %></td>
-      <td>¥<%= reservation.total %></td>
-      <td><%= reservation.start_date %></td>
-      <td><%= reservation.end_date %></td>
-    </tr>
-    <% end %>
-  </table>
-
-</table>
+    </table>
+  </div>
+</div>

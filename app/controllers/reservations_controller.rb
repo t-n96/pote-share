@@ -23,6 +23,7 @@ class ReservationsController < ApplicationController
     @reservation.total = (price * person) * days
 
     if @reservation.save
+      flash[:notice] = "予約が完了しました。"
       redirect_to room_reservations_path
     else
       redirect_to root_path

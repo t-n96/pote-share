@@ -41,11 +41,11 @@
             <% end %>
           </div>
           <ul class="accordion-nav">
-            <li><%= link_to "ルーム登録", :new_room %></li>
-            <li><%= link_to "登録済ルーム一覧", :rooms %></li>
-            <li><%= link_to "予約済ルーム一覧", room_reservations_path(:room_id) %></li>
-            <li><%= link_to "設定", edit_user_registration_path %></li>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "ルーム登録", :new_room, class:'nav_btn' %></li>
+            <li><%= link_to "登録済ルーム一覧", :rooms, class:'nav_btn' %></li>
+            <li><%= link_to "予約済ルーム一覧", room_reservations_path(:room_id), class:'nav_btn' %></li>
+            <li><%= link_to "設定", edit_user_registration_path, class:'nav_btn' %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:'nav_btn' %></li>
           </ul>
         <% else %>
           <button><%= link_to "ログイン", new_user_session_path, class: 'header__login' %></button>
@@ -53,6 +53,14 @@
         <% end %>
       </div>
     </header>
+
+    
+    <% if flash[:notice] %>
+      <div class="flash">
+        <p class="notice"><%= flash[:notice] %></p>
+      </div>
+    <% end %>
+    
 
   <%= yield %>
 

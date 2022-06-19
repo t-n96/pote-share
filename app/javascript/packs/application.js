@@ -22,5 +22,9 @@ $(document).on('turbolinks:load', function() {
     });
 
   });
+
+  $(function(){
+    $('.flash').fadeOut(2000);
+  });
   
 });

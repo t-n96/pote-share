@@ -1,30 +1,63 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$cMainColor: black;
+$cWhite: white;
+
 .content {
   width: 100%;
-  height: 500px;
+  height: 100%;
   position: relative;
 
+  & h3 {
+    position: relative;
+    margin-top: 50px;
+    left: 10%;
+  }
+
+  & h2 {
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 23%;
+      width: 800px;
+      height: 1px;
+      background-color: $cMainColor;
+    }
+  }
+
   &__inner {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%,-10%);
+   margin: 0 auto;
+   margin-top: 50px;
+  }
+
+  &__form {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__form-text {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 10px;
   }
 
   &__sized {
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
   }
 
   &__show {
-    position: absolute;
-    top: 60%;
-    left: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
     width: 65%;
     height: 100%;
-    transform: translate(-50%,-50%);
     display: flex;
 
     & .info {
@@ -35,12 +68,76 @@
     }
   }
 
+  & .room_btn {
+    position: absolute;
+    bottom: -15%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 450px;
+    height: 35px;
+    color: $cMainColor;
+    background-color: yellow;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #FFFF66;
+    }
+  }
+
+  .index {
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+
+    & .link {
+      text-decoration: none;
+      color: $cMainColor;
+    }
+
+    & a {
+      text-decoration: none;
+      color: red;
+    }
+
+    & table th {
+      background-color: #FFFF66;
+      padding: 5px;
+    
+      &:nth-child(1) {
+        width: 30%;
+      }
+      &:nth-child(2) {
+        width: 10%;
+      }
+      &:nth-child(4) {
+        width: 10%;
+      }
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8) {
+        width: 7%;
+      }
+    }
+    
+    & table td {
+      background-color: #F3FFD8;
+    }
+    
+  }
 }
 
 .reservation {
   width: 230px;
   height: 340px;
-  border: solid 1px #000;
+  background-color: #F3FFD8;
+  box-shadow: 1px 1px $cMainColor;
+  border: solid 1px #F3FFD8;
+  border-radius: 5px;
   margin-left: 40px;
   padding: 30px;
 }

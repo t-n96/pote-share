@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(params_room)
     if @room.save
+      flash[:notice] = "ルーム登録完了しました。"
       redirect_to :rooms
     else
       render "new"
@@ -28,6 +29,7 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find(params[:id])
     if @room.update(params_room)
+      flash[:notice] = "登録内容を更新しました。"
       redirect_to :rooms
     else
       render "edit"
@@ -35,6 +37,10 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    flash[:notice] = "削除完了しました。"
+    redirect_to :rooms
   end
 
   private

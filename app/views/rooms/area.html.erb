@@ -1,13 +1,15 @@
 <div class="result_content">
   <h3>検索結果</h3>
-  <% @rooms.each do |room| %>
-    <div class="result">
-      <%= image_tag room.image_url, :size =>'300x150' %>
-      <div class="result__item">
-        <p><%= room.name %></td></p>
-        <p><%= room.address %></td></p>
-        <p>¥<%= room.price %></p>
-      </div> 
-    </div>
+    <% @rooms.each do |room| %>
+      <%= link_to room do %>
+      <div class="result">
+        <%= image_tag room.image_url, :size =>'300x150' %>
+      <% end %>
+        <div class="result__item">
+          <p><%= room.name %></p>
+          <p><%= room.address %></p>
+          <p>¥<%= room.price %></p>
+        </div> 
+      </div>
   <% end %>
 </div>

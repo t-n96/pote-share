@@ -6,13 +6,13 @@
           <td><%= f.label :start_date, "開始日" %></td>
         </tr>
         <tr>
-          <td><%= f.date_field :start_date %></td>
+          <td><%= f.date_field :start_date, class:"form" %></td>
         </tr>
         <tr>
           <td><%= f.label :end_date, "終了日" %></td>
         </tr>
         <tr>
-          <td><%= f.date_field :end_date %></td>
+          <td><%= f.date_field :end_date, class:"form" %></td>
         </tr>
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <%= f.hidden_field :room_id, :value => @room.id %>
@@ -21,10 +21,10 @@
           <td><%= f.label :person, "人数" %></td>
         </tr>
         <tr>
-          <td><%= f.number_field :person %></td>
+          <td><%= f.number_field :person, class:"form" %></td>
         </tr>
         <tr>
-          <td><%= f.submit "確認画面へ進む" %></td>
+          <td><%= f.submit "確認画面へ進む", class:"reservation-btn" %></td>
         </tr>
       </body>
     </table>

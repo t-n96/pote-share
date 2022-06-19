@@ -23,7 +23,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     super
     if account_update_params[:avatar].present?
-      resource.avatar.attach(account_update_params[:avatar])    
+      resource.avatar.attach(account_update_params[:avatar])  
+      flash[:notice] = "アカウント情報を更新しました。"  
     end
   end
 
@@ -64,7 +65,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_sign_in_path_for(resource)
-    flash[:notice] = "新規登録完了しました"
+    flash[:notice] = "新規登録完了しました。"
     edit_user_registration_path
   end
 

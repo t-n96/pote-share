@@ -1,25 +1,26 @@
 <div class="content">
+  <h2>ルーム登録</h2>
   <%= form_for @room do |f| %>
     <table class="content__inner"> 
     
       <tr>
-        <td><%= f.label :name, "ルーム名", class:"content__form" %></td>
-        <td><%= f.text_field :name %></td>
+        <td width="30%"><%= f.label :name, "ルーム名" %></td>
+        <td width="70%"><%= f.text_field :name, class:"content__form" %></td>
       </tr>
       
       <tr>
-        <td><%= f.label :introduction, "ルーム紹介文", class:"content__form" %></td>
-        <td><%= f.text_area :introduction %></td>
+        <td><%= f.label :introduction, "ルーム紹介文" %></td>
+        <td><%= f.text_area :introduction, class:"content__form-text" %></td>
       </tr>
     
       <tr>
-        <td><%= f.label :price, "料金設定", class:"content__form" %></td>
-        <td><%= f.number_field :price %></td>
+        <td><%= f.label :price, "料金設定" %></td>
+        <td><%= f.number_field :price, class:"content__form" %></td>
       </tr>
       
       <tr>
-        <td><%= f.label :address, "住所", class:"content__form" %></td>
-        <td><%= f.text_area :address %></td>
+        <td><%= f.label :address, "住所" %></td>
+        <td><%= f.text_area :address, class:"content__form-text" %></td>
       </tr>
       
       <tr>
@@ -28,10 +29,12 @@
       </tr>
 
       <tr>
-        <td> <%= f.submit "登録する" %></td>
+        <td><%= f.submit "登録する", class:'room_btn' %></td>
       </tr>
 
     </table>
+    
+    
       
   <% end %>
 
