@@ -1,0 +1,21 @@
+<div class="content">
+  <h2>予約画面</h2>
+  <div class="content__show">
+
+    <div class="info">
+      <%= image_tag @room.image_url, class:"show_sized" %>
+      <p>
+        <%= @room.user_id %>
+        <%= @room.name %><br>
+        紹介文：<%= @room.introduction %><br>
+        住所：<%= @room.address %>
+      </p>
+    </div>
+
+    <div class="reservation">
+      <p>¥<%= @room.price %>／日</p>
+      <%= render "reservations/new" %>
+    </div>
+
+  </div>
+</div>

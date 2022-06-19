@@ -1,0 +1,237 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$cMainColor: black;
+$cWhite: white;
+
+body {
+  margin: 0 auto;
+}
+
+.flash {
+  position: relative;
+  background-color: #F3FFD8;
+  margin: 0;
+  width: 100%;
+  height: 50px;
+  
+
+  & .notice {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translate(-23%,-50%);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: $cMainColor;
+    
+  }
+}
+
+.header {
+  background-color: $cMainColor;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  
+  &__inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    left: 0;
+  }
+
+  &__search {
+    margin-top: 24px;
+    display: flex;
+    & .area{
+      margin-right: 10px;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    display: flex;
+    left: 85%;
+
+    & p {
+      color: $cWhite;
+      margin-top: 23px;
+      margin-right: 15px;
+    }
+
+    & .avatar {
+      border-radius: 50%;
+      margin-top: 8px;
+    }
+  }
+
+  & button {
+    margin-top: 15px;
+    width: 90px;
+    height: 40px;
+    background-color: #FFFF00;
+    border: none;
+    border-radius: 1px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+    &:nth-child(1) {
+      margin-right: 10px;
+    }
+  }
+
+  &__logout {
+    display: none;
+  }
+
+  &__login {
+    display: block;
+    text-decoration: none;
+    color: $cMainColor;
+  }
+
+  &__new {
+    display: block;
+    text-decoration: none;
+    color: $cMainColor;
+  }
+
+  & ul {
+    list-style: none;
+
+    & .nav_btn {
+      text-decoration: none;
+      color: $cMainColor;
+    }
+  }
+
+  & .accordion-title {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  & .accordion-nav {
+    position: absolute;
+    display: none;
+    z-index: 100;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px 25px;
+    top: 70px;
+    right: 10px;
+    width: 150px;
+    height: 130px;
+    font-size: 16px;
+    background-color: #FFFF00;
+    cursor: pointer;
+  }
+
+}
+
+
+
+.top {
+  background-image: url(https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg);
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 650px;
+
+  &__content {
+    text-align: center;
+  }
+
+  &__main {
+    padding-top: 100px;
+
+    & p {
+      font-size: 27px;
+      color: $cWhite;
+    }
+  }
+
+  &__form {
+
+    & .area {
+      width: 250px;
+      height: 30px;
+    }
+
+    & .btn {
+      width: 150px;
+      height: 35px;
+      background-color: $cMainColor;
+      color: $cWhite;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+  }
+}
+
+.erea {
+  width: 100%;
+  margin-top: 50px;
+
+  & p {
+    padding-left: 150px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__images {
+    padding-left: 150px;
+    padding-right: 150px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+
+    & span {
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      color: $cWhite;
+      font-weight: 600;
+      font-size: 25px;
+      letter-spacing: 5px;
+      text-align: center;
+      text-shadow: 1px 2px 3px $cMainColor;
+    }
+  }
+
+  & img {
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: $cMainColor;
+  text-align: center;
+  margin-top: 100px;
+
+  & p {
+    padding-top: 70px;
+    color: $cWhite;
+    font-size: 15px;
+    font-family: verdana, arial, helvetica, sans-serif;
+  }
+}
